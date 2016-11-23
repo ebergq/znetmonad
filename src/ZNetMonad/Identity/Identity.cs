@@ -1,6 +1,6 @@
 using System;
 
-namespace ZNetMonad
+namespace ZNetMonad.Identity
 {
     public sealed class Identity<A>
     {

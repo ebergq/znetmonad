@@ -1,3 +1,5 @@
+using ZNetMonad.Identity;
+
 namespace ZNetMonad
 {
     public static class MonadExtensions
