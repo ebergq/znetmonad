@@ -26,7 +26,7 @@ namespace ZNetMonad.Tests
                     select y;
 
             var result = Assert.IsType<Left<Exception, int>>(m);
-            Assert.IsType<Exception>(result.Error);
+            Assert.IsType<DivideByZeroException>(result.Error);
         }
 
         private static Either<Exception, int> Div(int a, int b)
