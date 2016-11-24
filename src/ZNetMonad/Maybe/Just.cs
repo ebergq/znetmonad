@@ -11,7 +11,6 @@ namespace ZNetMonad.Maybe
 
         public A Value { get; }
 
-        protected override Maybe<B> Bind<B>(Func<A, Maybe<B>> k)
-            => k(Value);
+        protected override Maybe<B> Bind<B>(Func<A, Maybe<B>> k) => k(Value);
     }
 }

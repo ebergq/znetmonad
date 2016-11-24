@@ -6,16 +6,18 @@ namespace ZNetMonad.Maybe
     {
         public Maybe<B> Select<B>(Func<A, B> s)
         {
-            return Bind(a => s(a).ToMaybe());
+            return Bind(a => Return(s(a)));
         }
 
         public Maybe<C> SelectMany<B, C>(
             Func<A, Maybe<B>> k,
             Func<A, B, C> s)
         {
-            return Bind(a => k(a).Bind(b => s(a, b).ToMaybe()));
+            return Bind(a => k(a).Bind(b => Return(s(a, b))));
         }
 
         protected abstract Maybe<B> Bind<B>(Func<A, Maybe<B>> k);
+
+        private static Maybe<B> Return<B>(B x) => new Just<B>(x);
     }
 }
