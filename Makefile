@@ -8,13 +8,13 @@ SOURCES = $(shell find src/ -type f -name '*.cs')
 all: test
 
 cleanall: cleanoutput
-	rm -rf $(patsubst %,%/project.lock.json,$(PROJECTS))
+	@rm -rf $(patsubst %,%/project.lock.json,$(PROJECTS))
 
 cleanoutput:
-	rm -rf $(OUT_DIRS)
+	@rm -rf $(OUT_DIRS)
 
 $(LOCK_FILES):
 	@dotnet restore
 
 test: $(LOCK_FILES) $(SOURCES)
-	dotnet test test/ZNetMonad.Tests
+	@dotnet test test/ZNetMonad.Tests
