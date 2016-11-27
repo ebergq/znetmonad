@@ -5,3 +5,6 @@ sudo apt-get update
 
 # Install .NET Core SDK
 sudo apt-get install -y dotnet-dev-1.0.0-preview2.1-003177
+
+# Install Make
+sudo apt-get install -y make
